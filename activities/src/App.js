@@ -1,31 +1,27 @@
-import React from 'react';
-import Calendar from './Calendar';
+import React from "react";
+import "./App.css";
+import logo from "./SWIFT_2021_logo.png";
+import avatar from "./avatar.png";
 
-import { collection, addDoc } from "firebase/firestore";
-import {db} from '../firebase';
-
-function App() {
-  Test()
+const App = () => {
   return (
-    <div className="App">
-      <h1>Event Planning Website</h1>
-      <Calendar />
+    <div className="app">
+      <header className="header">
+        <div className="logo">
+          <img src={logo} alt="Logo" />
+          <span>SwiftActivities</span>
+        </div>
+        <div className="avatar">
+          <img src={avatar} alt="Avatar" />
+        </div>
+      </header>
+      <div className="container">
+        <div className="panel panel-left">Left Panel</div>
+        <div className="panel panel-middle">Middle Panel</div>
+        <div className="panel panel-right">Right Panel</div>
+      </div>
     </div>
   );
-}
-
-function Test()
-    const addTodo = async (e) => {
-        e.preventDefault();  
-        try {
-            const docRef = await addDoc(collection(db, "todos"), {
-              todo: todo,    
-            });
-            console.log("Document written with ID: ", docRef.id);
-          } catch (e) {
-            console.error("Error adding document: ", e);
-          }
-    }
-}
+};
 
 export default App;
