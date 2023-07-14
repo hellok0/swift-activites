@@ -14,6 +14,7 @@ const App = () => {
   async function addActivities(activity) {
     try {
       const docRef = await addDoc(collection(db, "activities"), activity);
+      fetchActivities();
     } catch (e) {
       console.error("Error adding document: ", e);
     }

@@ -31,7 +31,7 @@ function AddButton({ textColor, buttonColor, addFunction}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const value = {Name: name, Location: location, Date: date, Time: time, Description: description, Link: link, ContactInfo: contactInfo};
+    const value = {ActivityName: name, Location: location, Date: date, Time: time, Description: description, Link: link, ContactInfo: contactInfo};
     
     console.log(value);
     addFunction(value);
