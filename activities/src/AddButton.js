@@ -6,17 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Dropdown from "./Dropdown";
 
-// {
-//   "ActivityName": "Yoga",
-//   "Location": "OPC",
-//   "Date": "2023-07-12",
-//   "Time": "9:30 AM",
-//   "Description": "Unwind and rejuvenate with a morning yoga session at the OPC park. Stretch, breathe, and find your inner peace!",
-//   "Link": "https://dummylink.com",
-//   "ContactInfo": "dummyemail@example.com"
-// },
-
-function AddButton({ textColor, buttonColor, addFunction}) {
+function AddButton({ textColor, buttonColor, addFunction }) {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -31,11 +21,19 @@ function AddButton({ textColor, buttonColor, addFunction}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const value = {ActivityName: name, Location: location, Date: date, Time: time, Description: description, Link: link, ContactInfo: contactInfo};
-    
+    const value = {
+      ActivityName: name,
+      Location: location,
+      Date: date,
+      Time: time,
+      Description: description,
+      Link: link,
+      ContactInfo: contactInfo,
+    };
+
     console.log(value);
     addFunction(value);
-    
+
     setName("");
     setDate("");
     setTime("");
@@ -46,27 +44,27 @@ function AddButton({ textColor, buttonColor, addFunction}) {
 
   const handleNameChange = (e) => {
     setName(e.target.value);
-  }
+  };
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
-  }
+  };
 
   const handleTimeChange = (e) => {
     setTime(e.target.value);
-  }
+  };
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
-  }
+  };
 
   const handleLinkChange = (e) => {
     setLink(e.target.value);
-  }
+  };
 
   const handleContactChange = (e) => {
     setContactInfo(e.target.value);
-  }
+  };
 
   const [open, setOpen] = useState(false);
 
@@ -92,16 +90,16 @@ function AddButton({ textColor, buttonColor, addFunction}) {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add an Event!</DialogTitle>
         <DialogContent>
-        <form onSubmit={handleSubmit}>
-          {<p>Activity Name:</p>}
-          <input type="text" value={name} onChange={handleNameChange} />
-          <div>
-            {<p>Located:</p>}
-            <Dropdown
-              options={["OPC", "VTC", "TYS"]}
-              onChange={handleDropdownChange}
-            />
-          </div>
+          <form onSubmit={handleSubmit}>
+            {<p>Activity Name:</p>}
+            <input type="text" value={name} onChange={handleNameChange} />
+            <div>
+              {<p>Located:</p>}
+              <Dropdown
+                options={["OPC", "VTC", "TYS"]}
+                onChange={handleDropdownChange}
+              />
+            </div>
 
             {<p>Date:</p>}
             <input type="text" value={date} onChange={handleDateChange} />
@@ -110,16 +108,24 @@ function AddButton({ textColor, buttonColor, addFunction}) {
             <input type="text" value={time} onChange={handleTimeChange} />
 
             {<p>Description:</p>}
-            <input type="text" value={description} onChange={handleDescriptionChange} />
+            <input
+              type="text"
+              value={description}
+              onChange={handleDescriptionChange}
+            />
 
             {<p>Link</p>}
-              <input type="text" value={link} onChange={handleLinkChange} />
+            <input type="text" value={link} onChange={handleLinkChange} />
 
             {<p>Contact Information</p>}
-            <input type="text" value={contactInfo} onChange={handleContactChange} />
+            <input
+              type="text"
+              value={contactInfo}
+              onChange={handleContactChange}
+            />
           </form>
         </DialogContent>
-  
+
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>
           <Button onClick={handleSubmit} autoFocus>

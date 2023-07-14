@@ -89,3 +89,9 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+.each-item-upcoming {
+  background-color: rgb(196, 240, 240);
+  margin-top: 20px;
+  border-radius: 10px;
+}
