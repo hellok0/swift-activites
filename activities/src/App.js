@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import logo from "./SWIFT_2021_logo.png";
 import avatar from "./avatar.png";
-import Calendar from "./BasicDateCalendar"
-import AddButton from "./AddButton"
-import ActivitiesList from "./ActivitiesList"
+import Calendar from "./BasicDateCalendar";
+import AddButton from "./AddButton";
+import ActivitiesList from "./ActivitiesList";
 import { collection, addDoc, getDocs } from "firebase/firestore";
-import db from './firebase';
+import db from "./firebase";
 
 const App = () => {
   const [activities, setActivites] = useState([]);
@@ -18,15 +18,20 @@ const App = () => {
       console.error("Error adding document: ", e);
     }
   }
-  
-  async function fetchActivities(){
-    await getDocs(collection(db, "activities")).then((querySnapshot)=>{               
-          const newData = querySnapshot.docs.map((doc) => ({...doc.data(), id:doc.id }));
-          setActivites(newData);                
+
+  async function fetchActivities() {
+    await getDocs(collection(db, "activities")).then((querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setActivites(newData);
     });
   }
 
-  useEffect(()=>{fetchActivities();}, [])
+  useEffect(() => {
+    fetchActivities();
+  }, []);
 
   return (
     <div className="app">
@@ -41,8 +46,8 @@ const App = () => {
       </header>
       <div className="container">
         <div className="panel panel-left">
-          {<ActivitiesList activities={activities}/>}
-          </div>
+          {<ActivitiesList activities={activities} />}
+        </div>
         <div className="panel panel-middle">
           {<AddButton buttonColor="#333333" textColor="#acf9e9" addFunction={addActivities}/>}
           {<Calendar />}
