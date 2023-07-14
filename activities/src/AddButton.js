@@ -6,23 +6,8 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Form from "./Form";
 
-// {
-//   "ActivityName": "Yoga",
-//   "Location": "OPC",
-//   "Date": "2023-07-12",
-//   "Time": "9:30 AM",
-//   "Description": "Unwind and rejuvenate with a morning yoga session at the OPC park. Stretch, breathe, and find your inner peace!",
-//   "Link": "https://dummylink.com",
-//   "ContactInfo": "dummyemail@example.com"
-// },
-
 function AddButton({ textColor, buttonColor }) {
   const [open, setOpen] = useState(false);
-
-  const handleFormSubmit = (value) => {
-    console.log("Submitted value:", value);
-    // Do something with the submitted value
-  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -46,7 +31,7 @@ function AddButton({ textColor, buttonColor }) {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Add an Event!</DialogTitle>
         <DialogContent>
-          <Form onSubmit={handleFormSubmit} />
+          <Form />
         </DialogContent>
 
         <DialogActions>
