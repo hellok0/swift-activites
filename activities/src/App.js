@@ -44,7 +44,7 @@ const App = () => {
           {<ActivitiesList activities={activities}/>}
           </div>
         <div className="panel panel-middle">
-          {<AddButton buttonColor="#333333" textColor="#acf9e9"/>}
+          {<AddButton buttonColor="#333333" textColor="#acf9e9" addFunction={addActivities}/>}
           {<Calendar />}
         </div>
         <div className="panel panel-right">Right Panel</div>
