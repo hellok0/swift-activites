@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import logo from "./SWIFT_2021_logo.png";
 import avatar from "./avatar.png";
+import Calendar from "./BasicDateCalendar"
+import AddButton from "./AddButton"
 
 const App = () => {
   return (
@@ -17,7 +19,10 @@ const App = () => {
       </header>
       <div className="container">
         <div className="panel panel-left">Left Panel</div>
-        <div className="panel panel-middle">Middle Panel</div>
+        <div className="panel panel-middle">
+          {<AddButton buttonColor="#333333" textColor="#acf9e9"/>}
+          {<Calendar />}
+        </div>
         <div className="panel panel-right">Right Panel</div>
       </div>
     </div>
