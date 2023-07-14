@@ -39,7 +39,7 @@ const App = () => {
       <header className="header">
         <div className="logo">
           <img src={logo} alt="Logo" />
-          <span>SwiftActivities</span>
+          <span class="title-app">FunActivitiesAtSwift</span>
         </div>
         <div className="avatar">
           <img src={avatar} alt="Avatar" />
@@ -50,7 +50,13 @@ const App = () => {
           {<ActivitiesList activities={activities} />}
         </div>
         <div className="panel panel-middle">
-          {<AddButton buttonColor="#333333" textColor="#acf9e9" addFunction={addActivities}/>}
+          {
+            <AddButton
+              buttonColor="#333333"
+              textColor="#acf9e9"
+              addFunction={addActivities}
+            />
+          }
           {<Calendar />}
         </div>
         <div className="panel panel-right">Right Panel</div>

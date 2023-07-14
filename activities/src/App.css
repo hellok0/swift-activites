@@ -4,6 +4,7 @@
 
 .header {
   background-color: #333;
+  font-size: 25px;
   color: #acf9e9;
   display: flex;
   align-items: center;
