@@ -1,5 +1,5 @@
-# This project was made during the Summer of 2023 for a company-wide hackathon while I was an intern.
-# Hosted in another member's private repository, it has been moved here for showcasing purposes.
+This project was made during the Summer of 2023 for a company-wide hackathon while I was an intern.
+Hosted in another member's private repository, it has been moved here for showcasing purposes.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
